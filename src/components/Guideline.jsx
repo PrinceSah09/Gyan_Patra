@@ -42,7 +42,7 @@ function Contact() {
 
                 <div className='lg:w-[45%] border p-4 m-4 '>
 
-                    <h3 className='py-2 text-md font-bold'>Donate & Support Gulmohar Maitri's Mission</h3>
+                    <h3 className='py-2 text-md font-bold'>Donate & Support Gulmohar Maitris Mission</h3>
                     <h2 className='text-4xl font-bold underline'>DONATION GUIDELINES</h2>
                     <Accordion
                         type="single"
