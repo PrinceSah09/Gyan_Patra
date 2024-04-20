@@ -27,7 +27,7 @@ function Contact() {
             {/* lg:overflow-auto scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar:bg-transparent scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 scrollbar-track:!rounded dark:scrollbar-track:!bg-slate-500/[0.16] dark:scrollbar-thumb:!bg-slate-500/50 max-h-96 lg:supports-scrollbars:pr-2 lg:max-h-96 */}
 
 
-            <div className='border flex flex-col md:flex-row md:flex-wrap justify-center max-w-screen-xl md:mx-auto my-4  '>
+            <div className='border flex flex-col md:flex-row md:flex-wrap gitjustify-center max-w-screen-xl md:mx-auto my-4  '>
                 <div className='lg:w-[45%] border   m-4'>
                     <Image
                         src={"/guideline.jpg"}
