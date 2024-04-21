@@ -6,9 +6,9 @@ import Contribute from "@/components/Contribute";
 export default function Home() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Contribute />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
