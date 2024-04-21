@@ -208,13 +208,15 @@ function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           {/* <div className="center"></div> */}
-          <div className="social-media flex items-center text-2xl gap-4">
-            <Button
-              variant="ghost"
-              className="  text-black  font-bold py-4 px-4 sm:mx-4 rounded transition duration-300 "
-            >
-              DONATE
-            </Button>
+          <div className="social-media flex items-center text-2xl gap-4 mr-4">
+            <Link href="/contribute " legacyBehavior passHref>
+              <Button
+                variant="ghost"
+                className="  text-black  font-bold py-4 px-4 sm:mx-4 rounded transition duration-300 "
+              >
+                DONATE
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
