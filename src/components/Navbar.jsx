@@ -2,7 +2,7 @@
 import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { Button,buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
+import SideMenu from "@/components/SideMenu";
 
 
 const components = [
@@ -78,15 +79,7 @@ function Navbar() {
       {/* Second Navbar */}
       <header className="bg-orange-600/70 py-4 cursor-pointer sticky top-0 w-full z-40 backdrop-blur-md">
         <div className="flex justify-between mx-auto max-w-screen-xl">
-          {/* <ul className="lg:flex  items-center space-x-4 text-white gap-4 text-md font-semibold hidden">
-                        <li className=" hover:text-zinc-200 transition duration-300"><Link href={"/"}>HOME</Link></li>
-                        <li className="hover:text-zinc-200 transition duration-300"><Link href={"/media"}>ABOUT</Link></li>
-                        <li className="hover:text-zinc-200 transition duration-300"><Link href={"/media"}>MEDIA COVERAGE</Link></li>
-                        <li className="hover:text-zinc-200 transition duration-300"><Link href={"/media"}>GALLERY</Link></li>
-                        <li className="hover:text-zinc-200 transition duration-300"><Link href={"/media"}>EVENT</Link></li>
-                        <li className="hover:text-zinc-200 transition duration-300"><Link href={"/media"}>CONTRIBUTE</Link></li>
-                        <li className="hover:text-zinc-200 transition duration-300"><Link href={"/contact"}>CONTACT US</Link></li>
-                    </ul> */}
+          <SideMenu/>
           <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -129,7 +122,7 @@ function Navbar() {
                 <NavigationMenuTrigger className=" ">ABOUT</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[300px]  md:grid-cols-1 lg:w-[200px]">
-                    <li><Link href={"/about"} className={cn(("font-bold"),buttonVariants({ variant: "ghost" }))}>About this Page</Link></li>
+                    <li><Link href={"/about"} className={cn(("font-bold"), buttonVariants({ variant: "ghost" }))}>About this Page</Link></li>
                     <li><Link href={"/founder"} className={buttonVariants({ variant: "ghost" })}>About the founder</Link></li>
                   </ul>
                 </NavigationMenuContent>
