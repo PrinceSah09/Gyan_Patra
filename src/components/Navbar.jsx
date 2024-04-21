@@ -20,7 +20,6 @@ import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 import SideMenu from "@/components/SideMenu";
 
-
 const components = [
   {
     title: "Alert Dialog",
@@ -36,7 +35,6 @@ const components = [
   },
 ];
 
-
 function Navbar() {
   return (
     <>
@@ -44,7 +42,12 @@ function Navbar() {
       <header className="bg-orange-400/20 ">
         <div className="flex justify-between max-w-screen-xl mx-6 md:mx-auto lg:mx-auto">
           <div className="image my-auto">
-            <Image src={"/logo.png"} height={100} width={120} alt="Picture of the author" />
+            <Image
+              src={"/logo.png"}
+              height={100}
+              width={120}
+              alt="Picture of the author"
+            />
           </div>
           <div className="center"></div>
           <div className="social-media flex text-2xl gap-2 text-orange-700 py-4">
@@ -79,7 +82,7 @@ function Navbar() {
       {/* Second Navbar */}
       <header className="bg-orange-600/70 py-4 cursor-pointer sticky top-0 w-full z-40 backdrop-blur-md">
         <div className="flex justify-between mx-auto max-w-screen-xl">
-          <SideMenu/>
+          <SideMenu />
           <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -119,16 +122,37 @@ function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className=" ">ABOUT</NavigationMenuTrigger>
+                <NavigationMenuTrigger className=" ">
+                  ABOUT
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[300px]  md:grid-cols-1 lg:w-[200px]">
-                    <li><Link href={"/about"} className={cn(("font-bold"), buttonVariants({ variant: "ghost" }))}>About this Page</Link></li>
-                    <li><Link href={"/founder"} className={buttonVariants({ variant: "ghost" })}>About the founder</Link></li>
+                    <li>
+                      <Link
+                        href={"/about"}
+                        className={cn(
+                          "font-bold",
+                          buttonVariants({ variant: "ghost" })
+                        )}
+                      >
+                        About this Page
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href={"/founder"}
+                        className={buttonVariants({ variant: "ghost" })}
+                      >
+                        About the founder
+                      </Link>
+                    </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="">MEDIA COVERAGE</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="">
+                  MEDIA COVERAGE
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[400px] ">
                     {components.map((component) => (
@@ -144,7 +168,9 @@ function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className=" ">GALLERY</NavigationMenuTrigger>
+                <NavigationMenuTrigger className=" ">
+                  GALLERY
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                     {components.map((component) => (
@@ -159,9 +185,22 @@ function Navbar() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/events" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn("font-bold", navigationMenuTriggerStyle())}
+                  >
+                    EVENTS
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(("font-bold"), navigationMenuTriggerStyle())}>
+                  <NavigationMenuLink
+                    className={cn("font-bold", navigationMenuTriggerStyle())}
+                  >
                     CONTACT US
                   </NavigationMenuLink>
                 </Link>
@@ -170,40 +209,40 @@ function Navbar() {
           </NavigationMenu>
           {/* <div className="center"></div> */}
           <div className="social-media flex items-center text-2xl gap-4">
-            <Button variant="ghost" className="  text-black  font-bold py-4 px-4 rounded transition duration-300">
+            <Button
+              variant="ghost"
+              className="  text-black  font-bold py-4 px-4 sm:mx-4 rounded transition duration-300 "
+            >
               DONATE
             </Button>
           </div>
         </div>
-      </header >
+      </header>
     </>
   );
 }
 
-const ListItem = forwardRef(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
+const ListItem = forwardRef(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
 ListItem.displayName = "ListItem";
-
 
 export default Navbar;
