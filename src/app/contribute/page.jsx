@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ComingSoon from "@/components/ComingSoon";
+import Contribute from "@/components/Contribute";
 
 export default function Home() {
-    return (
-        <>
-            <Navbar />
-            <ComingSoon />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      {/* <Navbar /> */}
+      <Contribute />
+      {/* <Footer /> */}
+    </>
+  );
 }
